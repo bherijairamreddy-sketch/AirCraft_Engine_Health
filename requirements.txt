@@ -1,0 +1,9 @@
+streamlit
+pandas
+plotly
+pandasql
+google-generativeai
+python-dotenv
+fastapi
+uvicorn
+python-multipart
