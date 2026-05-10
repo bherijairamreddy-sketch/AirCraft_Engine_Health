@@ -1,102 +1,288 @@
-# 🚀 Prompt BI: Queryless Business Intelligence
+# 🚀 Jive Analytics: Aircraft Engine Health Monitoring
 
-## Where Conversation Meets Data
+## AI-Powered Predictive Maintenance & Data Analytics Platform
 
-[![GitHub Workflow Status](https://img.shields.io/badge/Status-Hackathon%20Project-brightgreen)](https://github.com/CMKarth1kRaj/Prompt-BI)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-AirCraft_Engine_Health-blue)](https://github.com/bherijairamreddy-sketch/AirCraft_Engine_Health)
 [![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/downloads/)
-[![Streamlit App](https://img.shields.io/badge/Streamlit-Built-FF4B4B)](https://streamlit.io)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-Frontend-61DAFB)](https://reactjs.org/)
+[![Google Gemini](https://img.shields.io/badge/Google-Gemini-orange)](https://ai.google.dev/)
 
 ---
 
-## ✨ 1. Introduction & The Problem
+## ✨ Overview
 
-In today's data-rich environment, extracting timely insights is critical, yet often bottlenecked by technical barriers. Business executives need answers now, but relying on data teams for every report leads to delays and missed opportunities. Traditional BI tools are complex, requiring SQL or deep configuration knowledge.
+**Jive Analytics** is a comprehensive aircraft engine health monitoring platform that combines cutting-edge AI technology with modern web development to provide predictive maintenance insights. The system analyzes sensor data from aircraft engines using natural language queries, enabling engineers and maintenance teams to make data-driven decisions without requiring SQL expertise.
 
-**Prompt BI** is here to change that. We empower non-technical users to generate fully functional, interactive data dashboards using **only natural language prompts**. Think of it as having a dedicated data analyst, powered by AI, always at your fingertips.
-
----
-
-## 💡 2. Our Solution: Prompt BI
-
-Prompt BI transforms plain English questions into dynamic business intelligence dashboards in real-time. By leveraging the power of Large Language Models (LLMs) and a robust backend, we bridge the gap between business questions and data answers, making data accessible to everyone.
-
-**Key Features:**
-*   **Queryless BI:** Ask questions like "Show me monthly sales revenue for Q3 broken down by region."
-*   **Real-time Dashboards:** Instantly generated, interactive Plotly charts.
-*   **Data Agnostic:** Upload your own CSV files and immediately start querying.
-*   **Conversational Memory:** Ask follow-up questions to refine your analysis.
-*   **AI Data Summaries:** Get automated descriptions and insights about your uploaded data.
-*   **LLM-as-a-Judge Testing:** A unique Admin Dashboard that uses AI to generate and evaluate test cases with detailed failure diagnostics.
+**Key Capabilities:**
+- 🔍 **Natural Language Queries**: Ask questions in plain English about engine performance
+- 📊 **Real-time Dashboards**: Interactive visualizations powered by AI-generated insights
+- 🔧 **Predictive Maintenance**: Monitor engine health metrics and detect anomalies
+- 📈 **Data Upload & Analysis**: Support for CSV datasets with automatic schema detection
+- 🤖 **AI-Powered Analytics**: Google Gemini integration for intelligent query generation
+- 🧪 **Automated Testing**: Admin dashboard with AI-generated test cases and diagnostics
 
 ---
 
-## ⚙️ 3. Architecture Overview
+## 🎯 Problem Statement
 
-Prompt BI is built on a streamlined, Python-centric architecture designed for rapid deployment and powerful insights.
+Aircraft engine maintenance is critical for aviation safety and operational efficiency. Traditional maintenance approaches rely on scheduled inspections or reactive repairs, leading to:
 
-### 3.1. Core Pipeline: Text to Dashboard
-```mermaid
-graph TD
-    A["User Prompt"] --> B("Streamlit Chat UI")
-    B --> C{"Context Engine:<br>CSV Schema & Chat History"}
-    C --> D["Google Gemini API"]
-    D -- "Generates JSON: SQL + Chart Config" --> E{"JSON Parser & Validator"}
-    E --> F["PandasQL <br>(SQL on DataFrame)"]
-    F --> G["Plotly Express <br>(Interactive Charts)"]
-    G --> H["Streamlit <br>Dashboard Display"]
-    H -- "Updates Chat History" --> B
+- **Unnecessary downtime** from overly conservative maintenance schedules
+- **Safety risks** from undetected component failures
+- **High operational costs** from inefficient maintenance practices
+- **Data analysis bottlenecks** requiring specialized technical expertise
+
+**Jive Analytics** solves these challenges by providing an intuitive platform where maintenance engineers can query engine sensor data using natural language and receive instant, actionable insights.
+
+---
+
+## 🏗️ Architecture
+
+The platform consists of three main components working together:
+
+### Backend (FastAPI)
+- **API Endpoints**: RESTful APIs for data upload, querying, and analytics
+- **Data Processing**: Pandas-based data manipulation and SQL query execution
+- **LLM Integration**: Google Gemini API for natural language processing
+- **CORS Support**: Configured for frontend-backend communication
+
+### Frontend (React + Vite)
+- **Modern UI**: Built with React 19 and Tailwind CSS
+- **Interactive Dashboards**: Real-time charts using Recharts library
+- **File Upload**: Drag-and-drop interface for dataset uploads
+- **Chat Interface**: Conversational AI for natural language queries
+
+### AI Engine (Google Gemini)
+- **Query Generation**: Converts natural language to SQL queries
+- **Insight Extraction**: Provides business intelligence and recommendations
+- **Schema Understanding**: Analyzes dataset structure for accurate responses
+- **Error Handling**: Intelligent failure detection and user guidance
+
+---
+
+## 🚀 Features
+
+### Core Functionality
+- **📁 Data Upload**: Support for CSV files with automatic encoding detection
+- **💬 Natural Language Queries**: Ask questions like "Show me engines with high temperature readings"
+- **📊 Interactive Visualizations**: Bar charts, line graphs, pie charts, and scatter plots
+- **🔄 Real-time Updates**: Live dashboard updates as you interact with data
+- **💾 Chat History**: Maintains conversation context for follow-up questions
+
+### Advanced Analytics
+- **🔍 Predictive Insights**: AI-generated recommendations based on sensor data
+- **📈 Trend Analysis**: Monitor engine performance over time cycles
+- **⚠️ Anomaly Detection**: Identify unusual sensor readings and patterns
+- **📋 Summary Reports**: Automated data overview and key metrics
+
+### Admin & Testing
+- **🧪 Automated Testing Suite**: AI-generated test cases with detailed diagnostics
+- **📊 Performance Metrics**: Accuracy scoring and failure analysis
+- **🔧 System Validation**: Comprehensive testing of query generation and visualization
+
+---
+
+## 🛠️ Technology Stack
+
+### Backend
+- **FastAPI**: High-performance async web framework
+- **Pandas & PandasQL**: Data manipulation and SQL query execution
+- **Google Generative AI**: LLM integration for natural language processing
+- **Uvicorn**: ASGI server for production deployment
+
+### Frontend
+- **React 19**: Modern JavaScript library for UI development
+- **Vite**: Fast build tool and development server
+- **Tailwind CSS**: Utility-first CSS framework
+- **Recharts**: Composable charting library for React
+- **Lucide React**: Beautiful icon library
+
+### Development Tools
+- **Python 3.9+**: Core programming language
+- **Node.js**: JavaScript runtime for frontend development
+- **Git**: Version control system
+
+---
+
+## 📋 Prerequisites
+
+Before running the application, ensure you have:
+
+- **Python 3.9 or higher**
+- **Node.js 18+ and npm**
+- **Google Gemini API Key** (from [Google AI Studio](https://aistudio.google.com/))
+- **Git** for version control
+
+---
+
+## 🚀 Installation & Setup
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/bherijairamreddy-sketch/AirCraft_Engine_Health.git
+cd AirCraft_Engine_Health
 ```
 
-**Components:**
-*   **Frontend & Framework:** Streamlit provides a powerful, Python-native framework for building interactive web applications quickly.
-*   **LLM Integration:** Google Gemini API (`gemini-2.5-flash`) is the brain, translating natural language into structured queries and visualization instructions.
-*   **Data Engine:** Pandas for data manipulation, paired with `pandasql` to execute SQL queries directly on DataFrames, ensuring flexibility with uploaded CSVs.
-*   **Visualization:** Plotly Express delivers rich, interactive, and aesthetically pleasing charts out-of-the-box.
+### 2. Backend Setup
+```bash
+# Install Python dependencies
+pip install -r requirements.txt
 
-### 3.2. Admin Testing Suite: LLM-as-a-Judge (Innovation Highlight!)
-Our `admin_test.py` module introduces a groundbreaking approach to quality assurance:
-*   **Dynamic Test Generation:** Gemini intelligently crafts diverse test prompts (Easy, Medium, Hard, Hallucination) based on the dataset schema.
-*   **Detailed Failure Diagnostic:** The system runs these generated prompts through the core BI pipeline and automatically identifies exact reasons for failure—whether it's a SQL keyword gap, a chart mismatch, or a hallucinated response.
-*   **Reliability Scoring:** Provides a real-time accuracy score, validating the robustness of our AI.
+# Create environment file
+echo "GEMINI_API_KEY=your_api_key_here" > .env
+```
+
+### 3. Frontend Setup
+```bash
+cd frontend
+npm install
+cd ..
+```
+
+### 4. Configure API Key
+Edit the `.env` file and add your Google Gemini API key:
+```
+GEMINI_API_KEY=your_actual_api_key
+```
 
 ---
 
-## 🛠️ 4. Getting Started (Local Setup)
+## 🎮 Running the Application
 
-Follow these steps to get Prompt BI running on your local machine.
+### Option 1: Full Stack (Recommended)
+```bash
+# Terminal 1: Start Backend
+python -m uvicorn backend:app --host localhost --port 8001
 
-### 4.1. Prerequisites
-*   Python 3.9+
-*   Google Gemini API Key (get yours from [Google AI Studio](https://aistudio.google.com/))
+# Terminal 2: Start Frontend
+cd frontend && npm run dev
+```
 
-### 4.2. Installation
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/CMKarth1kRaj/Prompt-BI.git
-    cd Prompt-BI
-    ```
-2.  **Create a virtual environment (recommended):**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
-3.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+**Access the application:**
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:8001
+- API Documentation: http://localhost:8001/docs
 
-### 4.3. Configuration
-1.  Check for .env file or create one:
-    ```
-    GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
-    ```
+### Option 2: Streamlit Interface
+```bash
+streamlit run app.py
+```
+Access at: http://localhost:8501
 
-### 4.4. Running the App
-1.  **Main BI Dashboard:**
-    ```bash
-    streamlit run app.py
-    ```
-    Access the app at `http://localhost:8501`.
+### Option 3: Admin Testing Suite
+```bash
+python admin_test.py
+```
+
+---
+
+## 📊 Usage Guide
+
+### 1. Upload Data
+- Click the upload button or drag-and-drop CSV files
+- Supported formats: CSV, TXT, TSV
+- Automatic encoding detection for various file types
+
+### 2. Ask Questions
+Try these example queries:
+- "Show me the average sensor readings for all engines"
+- "Which engines have the highest temperature readings?"
+- "Plot the performance trend over time cycles"
+- "Find engines with abnormal vibration patterns"
+
+### 3. Explore Insights
+- View interactive charts and visualizations
+- Ask follow-up questions to refine analysis
+- Export insights and share findings
+
+### 4. Admin Testing
+- Access the admin dashboard for system validation
+- Run automated test suites
+- Review performance metrics and diagnostics
+
+---
+
+## 🔧 Configuration
+
+### Environment Variables
+```env
+GEMINI_API_KEY=your_google_gemini_api_key
+```
+
+### CORS Settings
+The backend is configured to accept requests from:
+- `http://localhost:5173` (Vite dev server)
+- `http://127.0.0.1:5173` (Alternative localhost)
+
+### Supported Data Formats
+- **File Types**: CSV, TXT, TSV
+- **Encodings**: UTF-8, UTF-8-BOM, Latin-1, CP1252
+- **Schema**: Automatic column detection and type inference
+
+---
+
+## 🧪 Testing & Validation
+
+The platform includes comprehensive testing capabilities:
+
+### Automated Test Generation
+- **Easy**: Basic queries and simple visualizations
+- **Medium**: Complex aggregations and multi-column analysis
+- **Hard**: Advanced analytics and trend analysis
+- **Hallucination**: Tests for error handling and edge cases
+
+### Performance Metrics
+- Query success rate
+- Response time analysis
+- Visualization accuracy
+- Error categorization and diagnostics
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions to improve Jive Analytics!
+
+### Development Workflow
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+### Code Standards
+- Follow PEP 8 for Python code
+- Use ESLint configuration for JavaScript/React
+- Include docstrings and comments
+- Test your changes thoroughly
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- **NASA** for the C-MAPSS aircraft engine simulation dataset
+- **Google** for the Gemini AI platform
+- **Open source community** for the amazing libraries and tools
+
+---
+
+## 📞 Support
+
+For questions, issues, or contributions:
+- **GitHub Issues**: Report bugs and request features
+- **GitHub Discussions**: Ask questions and share ideas
+- **Email**: Contact the maintainers for direct support
+
+---
+
+**Built with ❤️ for safer skies and smarter maintenance**
 
 ---
 
