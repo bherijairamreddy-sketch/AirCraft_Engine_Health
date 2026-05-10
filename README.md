@@ -307,5 +307,5 @@ For questions, issues, or contributions:
 
 ## 🌟 8. Team & Acknowledgments
 
-*   **CM Karthik Raj**
+*   **Jairamm Reddi**
 *   **Special Thanks:** To Google Gemini API for the LLM capabilities, Streamlit for the rapid prototyping, and the open-source data community.
